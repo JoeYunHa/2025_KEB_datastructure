@@ -1,6 +1,12 @@
-import numpy as np
+students = []
 
-narray = np.array([1,3,2,9])
-print(type(narray))
-
-print(narray[0], narray[1], narray[2],narray[3])
+try:
+    file = input("file name : ")
+    fp = open(file,'r')
+    readme_list = fp.readlines()
+    rls = readme_list[0].split(' ')
+    print(readme_list)
+    print(rls)
+    fp.close()
+except FileNotFoundError as err :
+    print(f"{file} does not exist . {err}")
