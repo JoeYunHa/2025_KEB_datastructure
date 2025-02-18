@@ -1,14 +1,14 @@
 def check_bracket(expr: str) -> bool:
 
     stack = list()
-    table = {'(': ')', '[':']','{':'}','<':'>' }
+    table = {')': '(', ']':'[','}':'{','>':'<' }
     for char in expr:
-        if char in table:
+        if char in table.values():
+            print(char)
             stack.append(char)
-        elif not stack or table[stack.pop()] != char:
-            return False
-        else:
-            pass
+        elif char in table.keys():
+            if not stack or table[char] != stack.pop():
+                return False
     return len(stack) == 0
 
 if __name__ == "__main__":
