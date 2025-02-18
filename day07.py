@@ -35,7 +35,7 @@ def peek() :
     if is_queue_empty():
         print("큐가 비었습니다.")
         return None
-    return queue[front+1]
+    return queue[(front+1)%size]
 
 
 size = int(input("큐의 크기를 입력 : "))
