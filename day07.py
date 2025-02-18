@@ -1,5 +1,3 @@
-import random
-
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -27,11 +25,9 @@ class LinkedList:
                 current = current.next
         return False
 
-
     def remove(self, target):
         if self.head.data == target:
             self.head = self.head.next
-            print("head deleted")
             return
         current = self.head.next
         prev = self.head
@@ -55,7 +51,7 @@ if __name__ == "__main__":
     l.append(7)
     l.append(-11)
     l.append(8)
-    l.remove(-11)
+    l.remove(8)
     print(l)
     # l = LinkedList()
     # i = 0
