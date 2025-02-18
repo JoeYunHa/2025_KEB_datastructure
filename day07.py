@@ -28,6 +28,18 @@ class LinkedList:
         return False
 
 
+    def remove(self, target):
+        if self.head.data == target:
+            self.head = self.head.next
+            print("head deleted")
+            return
+        current = self.head.next
+        prev = self.head
+        while current.data is not target:
+                prev = current
+                current = current.next
+        prev.next = current.next
+
     def __str__(self):
         node = self.head
         while node is not None:
@@ -37,13 +49,20 @@ class LinkedList:
 
 
 
+
 if __name__ == "__main__":
     l = LinkedList()
-    i = 0
-    while i < 20:
-        n = random.randint(1,20)
-        l.append(n)
-        print(n, end=' ')
-        i = i + 1
-    # print(l)
-    print(l.search(10))
+    l.append(7)
+    l.append(-11)
+    l.append(8)
+    l.remove(-11)
+    print(l)
+    # l = LinkedList()
+    # i = 0
+    # while i < 20:
+    #     n = random.randint(1,20)
+    #     l.append(n)
+    #     print(n, end=' ')
+    #     i = i + 1
+    # # print(l)
+    # print(l.search(10))
