@@ -1,13 +1,13 @@
 def is_queue_full() :
     global size,queue,front,rear
-    if rear - front == size and rear == size - 1:
+    if (rear + 1) % size == front:
         return True
     else:
         return False
 
 def is_queue_empty() :
     global size, queue, front, rear
-    if front == rear:
+    if front == rear :
         return True
     else :
         return False
@@ -40,7 +40,7 @@ def peek() :
 
 size = int(input("큐의 크기를 입력 : "))
 queue = [None for _ in range(size)]
-front = rear = -1
+front = rear = 0
 
 if __name__ == "__main__" :
     while True:
