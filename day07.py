@@ -18,11 +18,11 @@ class Queue:
             self.rear = node
         else:
             self.rear.next = node
-            self.rear = node
+            self.rear = node # increase rear
 
     def dequeue(self):
         if self.front is None:
-            raise IndexError("pop from empty queue")
+            raise IndexError("dequeue from empty queue")
         self._size -= 1
         temp = self.front.data
         self.front = self.front.next
@@ -40,6 +40,7 @@ if __name__ == "__main__":
     q.enqueue(8)
     print(q.size())
     print(q.dequeue())
+    print(q.size())
 
 
 
