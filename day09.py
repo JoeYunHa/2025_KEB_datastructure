@@ -43,6 +43,7 @@ def post_order(node):
 
 def dfs(node):
     queue = deque([node])
+
     while queue:
         current = queue.popleft()
         print(f"{current.data}", end = ' ')
