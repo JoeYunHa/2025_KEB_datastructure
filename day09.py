@@ -1,5 +1,7 @@
 # Assignment
 # v4.4) v4.3 버전의 출력 방식을 너비 우선 탐색으로 수정하시오.
+from collections import deque
+
 class TreeNode:
 	def __init__(self):
 		self.left = None
@@ -38,6 +40,16 @@ def post_order(node):
     post_order(node.left)
     post_order(node.right)
     print(f"{node.data} ", end='')
+
+def dfs(node):
+    queue = deque([node])
+    while queue:
+        current = queue.popleft()
+        print(f"{current.data}", end = ' ')
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
 
 
 def delete(root, value):
